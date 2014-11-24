@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<core-header-panel flex>
+    <core-toolbar id="mainheader">
+        <paper-icon-button id="navicon"
+                           icon="arrow-back"></paper-icon-button>
+        <span flex>Title</span>
+        <paper-icon-button id="searchbutton"
+                           icon="search"></paper-icon-button>
+
+    </core-toolbar>
+    <paper-tabs id="tabs" selected="favorites" self-end>
+        <paper-tab name="all">All</paper-tab>
+        <paper-tab name="favorites">Favorites</paper-tab>
+    </paper-tabs>
+    <p>Sample content.</p>
+    <p>Sample content.</p>
+</core-header-panel>
