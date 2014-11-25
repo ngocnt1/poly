@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace PTestLab
+namespace QLDV.ChamCong
 {
     public class FilterConfig
     {

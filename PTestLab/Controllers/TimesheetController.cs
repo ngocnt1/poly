@@ -6,15 +6,11 @@ using System.Web.Mvc;
 
 namespace QLDV.ChamCong.Controllers
 {
-    public class HomeController : Controller
+    public class TimesheetController : Controller
     {
-        //
-        // GET: /Home/
-
         public ActionResult Index()
         {
             return View();
         }
-
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace PTestLab
+namespace QLDV.ChamCong
 {
     public class BundleConfig
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace PTestLab
+namespace QLDV.ChamCong
 {
     public static class WebApiConfig
     {
