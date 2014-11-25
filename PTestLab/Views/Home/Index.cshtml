@@ -1,21 +1,18 @@
 ﻿@{
     ViewBag.Title = "Chấm Công";
 }
+@section PageHeader{
+    Tutorial
+}
 
-<h2>Chấm Công</h2>
+
 <core-header-panel flex>
     <core-toolbar id="mainheader">
-        <paper-icon-button id="navicon"
-                           icon="arrow-back"></paper-icon-button>
-        <span flex>Title</span>
-        <paper-icon-button id="searchbutton"
-                           icon="search"></paper-icon-button>
-
+        <paper-tabs id="tabs" selected="favorites" self-end>
+            <paper-tab name="all">All</paper-tab>
+            <paper-tab name="favorites">Favorites</paper-tab>
+            <paper-tab name="recents">Recents</paper-tab>
+            <paper-tab name="tools">Tools</paper-tab>
+        </paper-tabs>
     </core-toolbar>
-    <paper-tabs id="tabs" selected="favorites" self-end>
-        <paper-tab name="all">All</paper-tab>
-        <paper-tab name="favorites">Favorites</paper-tab>
-    </paper-tabs>
-    <p>Sample content.</p>
-    <p>Sample content.</p>
 </core-header-panel>
