@@ -1796,7 +1796,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="components\bower_components\observe-js\benchmark\chartjs\" />
-    <Folder Include="Models\" />
     <Folder Include="Modules\Timesheet\" />
   </ItemGroup>
   <ItemGroup>
