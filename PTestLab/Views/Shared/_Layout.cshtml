@@ -55,26 +55,25 @@
     </style>
 </head>
 <body>
-    <div id="pageHeader">
-
-
-    </div>
 
 
     <core-drawer-panel>
         <div drawer>
-            <core-header-panel flex>
+            <core-header-panel navigation flex>
                 <core-toolbar id="mainheader">
                     <paper-icon-button id="navicon"
                                        icon="arrow-back"></paper-icon-button>
-                    <span flex>@RenderSection("PageHeader", required: true)</span>
+                    <span id="pageHeader" flex>@RenderSection("PageHeader", required: true)</span>
                     <paper-icon-button id="searchbutton"
                                        icon="search"></paper-icon-button>
 
+                    <core-menu selected="0">
+                        <core-item icon="settings" label="Settings"></core-item>
+                        <core-item icon="dialog" label="Dialog"></core-item>
+                        <core-item icon="search" label="Search"></core-item>
+                    </core-menu>
                 </core-toolbar>
-
-
-            </core-header-panel>
+            </core-header-panel>           
         </div>
         <div main>
             @RenderBody()
@@ -98,13 +97,11 @@
     </core-animation>
 
     <script>
-        window.setTimeout(function () {
-            $('#start').on("click", function () {
+        window.addEventListener('polymer-ready', function(e) {
                 var animation = document.getElementById('ani1');
                 animation.target = document.getElementById('pageHeader');
                 animation.play();
             });
-        }, 5000);
 
     </script>
 </body>
