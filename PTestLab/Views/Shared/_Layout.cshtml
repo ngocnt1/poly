@@ -15,6 +15,10 @@
     <link rel="import" href="~/components/bower_components/core-animation/web-animations.html">
     <link rel="import" href="~/components/bower_components/core-drawer-panel/core-drawer-panel.html">
     <link rel="import" href="~/components/bower_components/core-pages/core-pages.html">
+    <link rel="import" href="~/components/bower_components/core-item/core-item.html">
+    <link rel="import" href="~/components/bower_components/core-icons/core-icons.html">
+    <link rel="import" href="~/components/bower_components/core-menu/core-menu.html">
+    <link rel="import" href="~/components/bower_components/core-menu/core-submenu.html">
     <link rel="import" href="~/components/bower_components/paper-tabs/paper-tabs.html">
     <link rel="import" href="~/components/bower_components/polymer/layout.html">
 
@@ -76,16 +80,17 @@
             left: 0;
             right: 0;
             margin: auto;
-            
             color: #999;
             width: 100%;
             height: 100px;
-            text-align:center;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-
+    <div id="loadingOverlay" class="loadingOverlay pageOverlay">
+        <div class="loadingMessage">Loading</div>
+    </div>
 
     <core-drawer-panel>
         <div drawer>
@@ -96,14 +101,16 @@
                     <span id="pageHeader" flex>@RenderSection("PageHeader", required: true)</span>
                     <paper-icon-button id="searchbutton"
                                        icon="search"></paper-icon-button>
-
-                    <core-menu selected="0">
-                        <core-item icon="settings" label="Settings"></core-item>
-                        <core-item icon="dialog" label="Dialog"></core-item>
-                        <core-item icon="search" label="Search"></core-item>
-                    </core-menu>
                 </core-toolbar>
+                <core-menu selected="0" on-core-select="{{selectAction}}">
+                    <core-item icon="settings" label="Settings"></core-item>
+                    <core-item icon="dialog" label="Dialog"></core-item>
+                    <core-item icon="search" label="Search"></core-item>
+                </core-menu>
+
             </core-header-panel>
+           
+            
         </div>
         <div main>
             @RenderBody()
@@ -125,9 +132,7 @@
             </core-animation-prop>
         </core-animation-keyframe>
     </core-animation>
-    <div id="loadingOverlay" class="loadingOverlay pageOverlay">
-        <div class="loadingMessage">Loading</div>
-    </div>
+
     <script>
         window.addEventListener('polymer-ready', function (e) {
             var overlay = document.getElementById('loadingOverlay');
