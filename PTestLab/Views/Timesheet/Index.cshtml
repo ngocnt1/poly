@@ -7,25 +7,45 @@
 @section scripts{
     <script>
         var tabs = document.querySelector('paper-tabs');
-        var pages = document.querySelector('core-pages');       
+        var pages = document.querySelectorAll('core-pages#tabsContent,core-pages#tabsContainer');
         tabs.addEventListener('core-select', function () {
-
-            pages.selected = tabs.selected;
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].selected = tabs.selected;
+            }
+           
         });
 
     </script>
 }
-
+@section sidemenu{
+<core-pages id="tabsContainer" selected="0" style="position:static">
+    <core-menu selected="0" on-core-select="{{selectAction}}">
+        <core-item icon="settings" label="Settings"></core-item>
+        <core-item icon="dialog" label="Dialog"></core-item>
+        <core-item icon="search" label="Search"></core-item>
+    </core-menu>
+    <core-menu>
+        <paper-button>
+            <core-icon icon="favorite"></core-icon>
+            custom button content
+        </paper-button>
+        <paper-button>
+            <core-icon icon="favorite"></core-icon>
+            custom button content
+        </paper-button>
+    </core-menu>
+</core-pages>
+}
 <core-header-panel flex>
     <core-toolbar id="mainheader">
         <paper-tabs id="tabs" selected="0" self-end>
             <paper-tab name="0">Overview</paper-tab>
             <paper-tab name="1">My Timesheet</paper-tab>
             <paper-tab name="2">My Leave</paper-tab>
-            <paper-tab name="3">Calendar</paper-tab>
+            <paper-tab name="3">Manage</paper-tab>
         </paper-tabs>
     </core-toolbar>
-    <core-pages selected="0" style="position:static">
+    <core-pages id="tabsContent" selected="0" style="position:static">
         <div style="border: 1px solid #bebebe; padding: 16px; margin: 16px; border-radius: 5px; background-color: #fff; color: #555;"><div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: #ddd; line-height: 64px; font-size: 30px; color: #666; text-align: center;">A</div><div style="font-size: 22px; padding: 8px 0 16px; color: #888;">Iisque perfecto dissentiet cum et, sit ut quot mandamus, ut vim tibique splendide instructior.</div><div style="font-size: 16px; padding-bottom: 8px;">Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.</div><div style="font-size: 12px;">Usu eu novum principes, vel quodsi aliquip ea.</div><div style="font-size: 12px;">Ut labores minimum atomorum pro. Laudem tibique ut has.</div></div>
         <div style="border: 1px solid #bebebe; padding: 16px; margin: 16px; border-radius: 5px; background-color: #fff; color: #555;"><div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: #ddd; line-height: 64px; font-size: 30px; color: #666; text-align: center;">B</div><div style="font-size: 22px; padding: 8px 0 16px; color: #888;">Iisque perfecto dissentiet cum et, sit ut quot mandamus, ut vim tibique splendide instructior.</div><div style="font-size: 16px; padding-bottom: 8px;">Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.</div><div style="font-size: 12px;">Usu eu novum principes, vel quodsi aliquip ea.</div><div style="font-size: 12px;">Ut labores minimum atomorum pro. Laudem tibique ut has.</div></div>
         <div style="border: 1px solid #bebebe; padding: 16px; margin: 16px; border-radius: 5px; background-color: #fff; color: #555;"><div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: #ddd; line-height: 64px; font-size: 30px; color: #666; text-align: center;">C</div><div style="font-size: 22px; padding: 8px 0 16px; color: #888;">Iisque perfecto dissentiet cum et, sit ut quot mandamus, ut vim tibique splendide instructior.</div><div style="font-size: 16px; padding-bottom: 8px;">Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.</div><div style="font-size: 12px;">Usu eu novum principes, vel quodsi aliquip ea.</div><div style="font-size: 12px;">Ut labores minimum atomorum pro. Laudem tibique ut has.</div></div>
