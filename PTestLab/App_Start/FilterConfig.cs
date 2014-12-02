@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace QLDV.ChamCong
+namespace QLDV.Time
 {
     public class FilterConfig
     {

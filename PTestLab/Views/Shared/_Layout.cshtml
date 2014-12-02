@@ -95,29 +95,8 @@
         <div class="loadingMessage">Loading</div>
     </div>
 
-    <core-drawer-panel>
-        <div drawer>
-            <core-header-panel navigation flex>
-                <core-toolbar id="mainheader">
-                    <paper-icon-button id="navicon"
-                                       icon="arrow-back"></paper-icon-button>
-                    <span id="pageHeader" flex>@RenderSection("PageHeader", required: true)</span>
-                    <paper-icon-button id="searchbutton"
-                                       icon="search"></paper-icon-button>
-                </core-toolbar>
-                @RenderSection("sidemenu", required: false)
-              
-
-            </core-header-panel>
-           
-            
-        </div>
-        <div main>
-            @RenderBody()
-        </div>
-    </core-drawer-panel>
-
-
+    <span id="pageHeader" flex>@RenderSection("PageHeader", required: true)</span>
+    @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace QLDV.ChamCong
+namespace QLDV.Time
 {
     public class RouteConfig
     {
